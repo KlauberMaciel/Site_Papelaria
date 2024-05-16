@@ -5,13 +5,11 @@ import Menu from "../componentes/menu";
 import BarraPrincipal from "../componentes/barraPrincipal";
 
 export default function Dashboard(){
-    return(
-      
-<div className="dashboard-container">
+    const usuarioLogado = localStorage.getItem("usuarioLogado");
 
-        
-          <BarraPrincipal />
-       
+    return(
+        <div className="dashboard-container">
+            <BarraPrincipal />
             <div className="home-menu">
                 <div className="menu">
                     <Menu />
@@ -20,6 +18,6 @@ export default function Dashboard(){
                     <Head title="Home" />
                 </div>
             </div>
-</div>
+        </div>
     )
 }

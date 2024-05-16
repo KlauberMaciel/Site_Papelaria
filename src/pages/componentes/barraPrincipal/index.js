@@ -6,6 +6,7 @@ import {FiLogOut}
 from "react-icons/fi";
  
 export default function BarraPrincipal(){
+  const usuarioLogado = localStorage.getItem("usuarioLogado");
     const navigate = useNavigate();
     const Sair = () => {
         confirmAlert({
@@ -31,7 +32,14 @@ return(
         <h1>
             Papelaria do Futuro
         </h1>
-                <FiLogOut onClick={Sair} size={30}/> 
+                 <p>
+                <FiLogOut onClick={Sair} size={30}/>
+                <br></br>
+                <span>
+                    {usuarioLogado}
+                </span>
+                </p>
+                
     </div>
 )
 }

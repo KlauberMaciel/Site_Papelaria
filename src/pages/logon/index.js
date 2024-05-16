@@ -15,17 +15,17 @@ export default function Logon(){
     if(!email || !senha){
         alert("Dados incorretos ou vazios")
     }else{
-        const usuariologado = banco.filter(linha=>{return linha.email===email && linha.senha===senha})
+        const usuariologado = banco.find(linha=> linha.email===email && linha.senha===senha)
     
-        if(usuariologado.length>0){
+        if(usuariologado){
+            localStorage.setItem("usuarioLogado", usuariologado.nome)
             navigate('/dashboard')
         }else{
             alert("Email ou senha incorretos")
         }
     }
-
-
     }
+
    return(
     <div className="logon-container">
         <section className="form">
